@@ -21,7 +21,32 @@ keys.addEventListener('click', event => {
 
     // OPERATOR KEY
     if (type === 'operator') {
-        console.log(key);
+        const operatorKeys = keys.querySelectorAll('[data-type="operator"]');
+        key.dataset.state = "selected";
+        operatorKeys.forEach(el => el.dataset.state = '')
+
+        calculator.dataset.firstNumber = displayValue;
+        calculator.dataset.operator = key.dataset.key;
+    }
+
+    if (type === 'equal') {
+        //perform calculation
+        const firstNumber = calculator.dataset.firstNumber
+        const operator = calculator.dataset.operator;
+        const secondNumber = displayValue
+        console.log(firstNumber, operator, secondNumber);
+
+        display.textContent = calculate(firstNumber, operator, secondNumber);
     }
     calculator.dataset.previousKeyType = type;
 })
+
+function calculate(firstNumber, operator, secondNumber) {
+    firstNumber = parseInt(firstNumber) 
+    secondNumber = parseInt(secondNumber)
+    let result = '';
+    if (operator === 'plus')  return firstNumber + secondNumber;
+    if (operator === 'minus') return firstNumber - secondNumber;
+    if (operator === 'times') return firstNumber * secondNumber;
+    if (operator === 'divide') return firstNumber / secondNumber;
+}

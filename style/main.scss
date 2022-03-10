@@ -46,7 +46,7 @@ body {
 }
 
 .calculator-keys > button {
-    border: 0;
+  border: 0;
 }
 
 .one {
@@ -108,12 +108,17 @@ body {
   &:active {
     background-color: #cbd2d9;
   }
+
 }
 
 .number {
   background-color: #fff;
-
+  
   &:active {
     background-color: #cbd2d9;
   }
+}
+
+[data-state="selected"] {
+  background-color: #cbd2d9;
 }

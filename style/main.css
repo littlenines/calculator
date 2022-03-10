@@ -705,4 +705,8 @@ body {
 .number:active {
   background-color: #cbd2d9;
 }
+
+[data-state="selected"] {
+  background-color: #cbd2d9;
+}
 /*# sourceMappingURL=main.css.map */
