@@ -38,6 +38,12 @@ keys.addEventListener('click', event => {
 
         display.textContent = calculate(firstNumber, operator, secondNumber);
     }
+
+    if (type === 'clear') {
+        display.textContent = '0';
+        delete calculator.dataset.firstNumber;
+        delete calculator.dataset.operator;
+    }
     calculator.dataset.previousKeyType = type;
 })
 
